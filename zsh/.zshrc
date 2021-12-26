@@ -9,10 +9,10 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH='/home/tuvu/.oh-my-zsh'
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load (https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
-ZSH_THEME='powerlevel10k/powerlevel10k'
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Remind me to update when it's time
 zstyle ':omz:update' mode reminder  
@@ -23,25 +23,46 @@ DISABLE_AUTO_TITLE='true'
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS='true'
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Example format: plugins=(rails git textnvim ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# Zsh framework
+if [[ ! -d $ZSH ]]; then
+    echo "Installing ohmyzsh..."
+    git clone https://github.com/ohmyzsh/ohmyzsh.git $ZSH
+    echo ""
+fi
 
-source $ZSH/oh-my-zsh.sh
+# Zsh theme
+if [[ ! -d $ZSH_CUSTOM/themes/powerlevel10k ]]; then
+    echo "Installing powerlevel10k..."
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+    echo ""
+fi
+source $ZSH_CUSTOM/themes/powerlevel10k/powerlevel10k.zsh-theme
 
-# Zsh colorscheme
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# Zsh autosuggestions
+if [[ ! -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]]; then
+    echo "Installing zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    echo ""
+fi
+
+# Zsh syntax-highlighting
+if  [[ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]]; then
+    echo "Installing zsh-syntax-highlighting..."
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    echo ""
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Zsh auto-suggestion
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Oh-my-zsh plugins
+plugins=(
+    git 
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
 
-# Zsh syntax-highlighting
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias vim='nvim'
