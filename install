@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
-source env
+export DOTFILES=$HOME/dotfiles
+export STOW_FOLDERS="nvim,zsh,powerlevel10k"
 
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
