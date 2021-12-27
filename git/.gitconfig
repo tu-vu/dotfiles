@@ -1,0 +1,34 @@
+[user]
+    name = Tu Vu
+	email = tuvu852@gmail.com
+	username = tuvu
+[core]
+    editor = nvim
+[color]
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
+    grep = auto
+    ui = auto
+[alias]
+    a = add -A
+    cm = commit -m
+    st = status
+    br = branch
+    co = checkout
+    d = diff
+    undo = checkout --
+    unstage = reset HEAD --
+    uncommit = reset HEAD~1 --soft
+    pod = push origin dev
+    pom = push origin main
+    la = "!git config -l | grep alias"
+[github]
+    use = tu-vu
+[difftool]
+    prompt = true
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
