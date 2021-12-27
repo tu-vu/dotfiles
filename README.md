@@ -8,7 +8,9 @@ My dotfiles for alarcritty, zsh, neovim. Managed by [GNU Stow](https://www.gnu.o
 
 ### Using Git
 
-`git clone https://github.com/tu-vu/dotfiles.git && cd dotfiles && ./install`
+```
+git clone https://github.com/tu-vu/dotfiles.git && cd dotfiles && ./install
+```
 
 ### Lua
 
