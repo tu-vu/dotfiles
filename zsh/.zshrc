@@ -14,6 +14,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Path to custom oh-my-zsh
 export ZSH_CUSTOM=$ZSH/custom
 
+# Path to custom config
+export NVIM=$HOME/.config/nvim/
+
 # Set name of the theme to load (https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
