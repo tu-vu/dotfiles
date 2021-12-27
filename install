@@ -5,7 +5,7 @@ export STOW_FOLDERS="nvim,zsh,powerlevel10k"
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do
-    echo "Installing $folder"
+    echo "Installing $folder..."
     stow -R $folder
 done
 popd
