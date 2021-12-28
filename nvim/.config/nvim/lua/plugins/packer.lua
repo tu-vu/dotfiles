@@ -49,11 +49,26 @@ return require("packer").startup(function()
 	})
 
 	-- Snippets
-	use("hrsh7th/vim-vsnip") -- VSCode snippet
+	use("L3MON4D3/LuaSnip") -- snippet engine
+	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- Comment
-	use("numToStr/Comment.nvim") -- Integrate with nvim-ts-context-commentstring
-	use("JoosepAlviste/nvim-ts-context-commentstring") -- Makes jsx comments actually work
+	use({
+		"numToStr/Comment.nvim", -- Integrate with nvim-ts-context-commentstring
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+	use({
+		"JoosepAlviste/nvim-ts-context-commentstring", -- Makes jsx comments actually work
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				context_commentstring = {
+					enable = true,
+				},
+			})
+		end,
+	})
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", requires = {
@@ -67,6 +82,13 @@ return require("packer").startup(function()
 	use("windwp/nvim-autopairs") -- Autocomplete pairs, integerates with both cmp and treesitter
 	use({ "windwp/nvim-ts-autotag", ft = { "typescript", "typescriptreact" } }) -- Autocomplete tags
 	use("tpope/vim-surround") -- Tags editing
+	use({
+		"folke/trouble.nvim", -- Pretty list of diagnostic, references, etc.
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("trouble").setup()
+		end,
+	})
 
 	-- Misc
 	use("nvim-lua/plenary.nvim") -- Useful Lua functions used by lots of plugins
