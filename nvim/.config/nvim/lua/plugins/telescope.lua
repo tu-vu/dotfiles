@@ -5,17 +5,12 @@ end
 
 local actions = require("telescope.actions")
 
-local function buf_set_keymap(...)
-	vim.api.nvim_buf_set_keymap(bufnr, ...)
+local function nvim_set_keymap(mode, lhs, rhs, opts)
+	vim.api.nvim_set_keymap(mode, lhs, rhs, opts or {
+		noremap = true,
+		silent = true,
+	})
 end
-
--- Mappings
-local opts = { noremap = true, silent = true }
-buf_set_keymap("n", "sf", "<cmd>Telescope find_files<CR>", opts)
-buf_set_keymap("n", "sg", "<cmd>Telescope live_grep<CR>", opts)
-buf_set_keymap("n", "sb", "<cmd>Telescope file_browser<CR>", opts)
-buf_set_keymap("n", "sh", "<cmd>Telescope help_tags<CR>", opts)
-buf_set_keymap("n", "<Leader><Leader>", "<cmd>Telescope buffers<CR>", opts)
 
 telescope.setup({
 	extensions = {
@@ -36,4 +31,18 @@ telescope.setup({
 	},
 })
 
-telescope.load_extension("fzf", opts)
+telescope.load_extension("fzf")
+
+custom = function() -- fall back to find_files if git_files can't find .git
+	local ok = pcall(require("telescope.builtin").git_files)
+	if not ok then
+		require("telescope.builtin").find_files()
+	end
+end
+
+local opts = { noremap = true, silent = true }
+nvim_set_keymap("n", ",f", "<cmd>lua custom()<CR>")
+nvim_set_keymap("n", ",s", "<cmd>Telescope live_grep<CR>")
+nvim_set_keymap("n", ",b", "<cmd>Telescope file_browser<CR>")
+nvim_set_keymap("n", ",h", "<cmd>Telescope help_tags<CR>")
+nvim_set_keymap("n", "<Leader><Leader>", "<cmd>Telescope buffers<CR>")

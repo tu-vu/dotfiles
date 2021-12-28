@@ -4,9 +4,10 @@ if not status_ok then
 end
 
 local function buf_set_keymap(bufnr, mode, lhs, rhs, opts)
-    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
-        silent = true,
-    })
+	vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
+		noremap = true,
+		silent = true,
+	})
 end
 
 local on_attach = function(client, bufnr)
