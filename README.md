@@ -4,6 +4,11 @@
 
 My dotfiles for alarcritty, zsh, neovim. Managed by [GNU Stow](https://www.gnu.org/software/stow/).
 
+## Todo
+
+- [ ] Add [ Lua LSP ](https://github.com/sumneko/lua-language-server)
+- [ ] Modularize lsp folder into handlers and installer
+
 ## Installation
 
 ### Using Git
@@ -35,5 +40,5 @@ cargo install stylua --Lua code formatter
 
 ### Neovim plugins
 
-Open [packer.nvim](https://github.com/wbthomason/packer.nvim) with nvim then execute:
+Open [packer](https://github.com/wbthomason/packer.nvim) with nvim then run
 `:PackerInstall`.
