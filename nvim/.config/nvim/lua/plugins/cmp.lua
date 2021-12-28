@@ -1,12 +1,19 @@
-local status_ok, cmp = pcall(require, "cmp")
-if not status_ok then
+local cmp_status_ok, cmp = pcall(require, "cmp")
+if not cmp_status_ok then
 	return
 end
+
+local snip_status_ok, luasnip = pcall(require, "luasnip")
+if not snip_status_ok then
+	return
+end
+
+require("luasnip/loaders/from_vscode").lazy_load()
 
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+			luasnip.lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
 	completion = {
@@ -24,19 +31,24 @@ cmp.setup({
 			c = cmp.mapping.close(),
 		}),
 		["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-		["<Tab>"] = function(fallback)
+		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-			elseif vim.fn["vsnip#available"](1) == 1 then
-				u.input("<Plug>(vsnip-expand-or-jump)")
+			elseif luasnip.expandable() then
+				luasnip.expand()
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
 			else
 				fallback()
 			end
-		end,
+		end, {
+			"i",
+			"s",
+		}),
 	},
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		{ name = "vsnip" }, -- For vsnip users.
+		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
 	}),
