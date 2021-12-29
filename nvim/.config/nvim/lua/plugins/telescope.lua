@@ -5,12 +5,7 @@ end
 
 local actions = require("telescope.actions")
 
-local function nvim_set_keymap(mode, lhs, rhs, opts)
-	vim.api.nvim_set_keymap(mode, lhs, rhs, opts or {
-		noremap = true,
-		silent = true,
-	})
-end
+local u = require("utils")
 
 telescope.setup({
 	extensions = {
@@ -33,16 +28,29 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 
-custom = function() -- fall back to find_files if git_files can't find .git
+CustomFindFiles = function() -- fall back to find_files if git_files can't find .git
 	local ok = pcall(require("telescope.builtin").git_files)
 	if not ok then
 		require("telescope.builtin").find_files()
 	end
 end
 
-local opts = { noremap = true, silent = true }
-nvim_set_keymap("n", ",f", "<cmd>lua custom()<CR>")
-nvim_set_keymap("n", ",s", "<cmd>Telescope live_grep<CR>")
-nvim_set_keymap("n", ",b", "<cmd>Telescope file_browser<CR>")
-nvim_set_keymap("n", ",h", "<cmd>Telescope help_tags<CR>")
-nvim_set_keymap("n", "<Leader><Leader>", "<cmd>Telescope buffers<CR>")
+-- commands
+u.lua_command("Files", "CustomFindFiles()")
+u.command("Rg", "Telescope live_grep")
+u.command("Browser", "Telescope file_browser")
+u.command("HelpTags", "Telescope help_tags")
+u.command("Buffers", "Telescope buffers")
+
+-- bindings
+u.nmap("sf", "<cmd>Files<CR>")
+u.nmap("ss", "<cmd>Rg<CR>")
+u.nmap("sb", "<cmd>Browser<CR>")
+u.nmap("sh", "<cmd>HelpTags<CR>")
+u.nmap("<Leader><Leader>", "<cmd>Buffers<CR>")
+
+-- lsp
+u.command("LspRef", "Telescope lsp_references")
+u.command("LspDef", "Telescope lsp_definitions")
+u.command("LspAct", "Telescope lsp_code_actions")
+u.command("LspRangeAct", "Telescope lsp_range_code_actions")
