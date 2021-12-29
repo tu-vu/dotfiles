@@ -23,12 +23,14 @@ vim.cmd([[
     augroup end
 ]])
 
-return require("packer").startup(function()
+return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim") -- Plugin mangager written in Lua
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- Neovim's built-in LSP
 	use("jose-elias-alvarez/null-ls.nvim") -- Formatters and linters
+	use("jose-elias-alvarez/nvim-lsp-ts-utils") -- Useful utilities for TypeScript
+	use("b0o/schemastore.nvim") -- Simple access to schemastore
 
 	-- Treesitter
 	use({
@@ -70,21 +72,23 @@ return require("packer").startup(function()
 		end,
 	})
 
-	-- Telescope
-	use({ "nvim-telescope/telescope.nvim", requires = {
-		"nvim-telescope/telescope-fzf-native.nvim",
-	} })
+	-- Telescope - Neovim fuzzy finder
+	use({
+		"nvim-telescope/telescope.nvim",
+		requires = {
+			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }, -- better algorithm
+		},
+	})
 
 	-- Colorschemes
 	use("navarasu/onedark.nvim") -- Nice colorscheme written in Lua
 
 	-- Productivity
 	use("windwp/nvim-autopairs") -- Autocomplete pairs, integerates with both cmp and treesitter
-	use({ "windwp/nvim-ts-autotag", ft = { "typescript", "typescriptreact" } }) -- Autocomplete tags
+	use({ "windwp/nvim-ts-autotag" }) -- Autocomplete tags
 	use("tpope/vim-surround") -- Tags editing
 	use({
 		"folke/trouble.nvim", -- Pretty list of diagnostic, references, etc.
-		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("trouble").setup()
 		end,
@@ -92,6 +96,7 @@ return require("packer").startup(function()
 
 	-- Misc
 	use("nvim-lua/plenary.nvim") -- Useful Lua functions used by lots of plugins
+	use("kyazdani42/nvim-web-devicons") -- Icons
 	use("iamcco/markdown-preview.nvim") -- Markdown Preview
 
 	-- Automatically set up configuration after cloning packer.nvim
