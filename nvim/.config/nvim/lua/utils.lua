@@ -23,7 +23,7 @@ M.command = function(name, fn)
 end
 
 M.lua_command = function(name, fn)
-	M.command(name, "lua" .. fn)
+	M.command(name, "lua " .. fn)
 end
 
 return M
