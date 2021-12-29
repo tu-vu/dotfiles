@@ -10,5 +10,6 @@ set.shiftwidth = 4 -- Width for autoindent
 set.clipboard = "unnamedplus" -- Using system clipboard
 set.incsearch = true -- Incremental highlight while searching
 set.wrap = false -- No wrap line
+set.hlsearch = false -- No highlight after done searching
 set.swapfile = false -- Disable creating new swap file
 set.scrolloff = 10 -- Keeping the cursor in the center while scrolling
