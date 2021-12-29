@@ -6,9 +6,7 @@ My dotfiles for alarcritty, zsh, neovim. Managed by [GNU Stow](https://www.gnu.o
 
 ## Todo
 
-- [ ] Fix [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) auto imports in React
-- [ ] Add [ Lua LSP ](https://github.com/sumneko/lua-language-server)
-- [ ] Modularize lsp folder into handlers and installer
+- [ ] Add auto import utility for React - [ts-utils](https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils)
 
 ## Installation
 
