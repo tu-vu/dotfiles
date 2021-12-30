@@ -9,6 +9,7 @@ local ts_utils = require("nvim-lsp-ts-utils")
 local ts_utils_settings = {
 	enable_import_on_completion = true,
 	update_imports_on_move = true,
+	auto_inlay_hints = false,
 	-- filter out dumb module warning
 	filter_out_diagnostics_by_code = { 80001 },
 }
