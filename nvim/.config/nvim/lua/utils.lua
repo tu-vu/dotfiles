@@ -14,8 +14,8 @@ for _, mode in ipairs({ "n", "o", "i", "x", "t" }) do
 	end
 end
 
-M.buf_map = function(buffer, mode, target, source, opts)
-	api.nvim_buf_set_keymap(buffer or 0, mode, target, source, opts or custom_options)
+M.buf_map = function(bufnr, mode, target, source, opts)
+	api.nvim_buf_set_keymap(bufnr or 0, mode, target, source, opts or custom_options)
 end
 
 M.command = function(name, fn)
