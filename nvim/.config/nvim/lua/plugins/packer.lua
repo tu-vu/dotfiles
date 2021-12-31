@@ -46,12 +46,13 @@ return require("packer").startup(function(use)
 			"hrsh7th/cmp-path", -- Path completions
 			"hrsh7th/cmp-cmdline", -- Command mode completions
 			"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
-			"saadparwaiz1/cmp_luasnip", -- Snippet source for nvim-cmp
+			"hrsh7th/cmp-vsnip", -- Snippet source for nvim-cmp
 		},
 	})
 
 	-- Snippets
-	use("L3MON4D3/LuaSnip") -- snippet engine
+	use("hrsh7th/vim-vsnip") -- snippet engine
+	use("hrsh7th/vim-vsnip-integ") -- integrates with vsnip
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- Comment

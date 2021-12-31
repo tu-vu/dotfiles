@@ -26,4 +26,8 @@ M.lua_command = function(name, fn)
 	M.command(name, "lua " .. fn)
 end
 
+M.input = function(keys, mode)
+	api.nvim_feedkeys(M.t(keys), mode or "m", true)
+end
+
 return M
