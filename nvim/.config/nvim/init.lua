@@ -1,4 +1,3 @@
 require("options")
-require("colorscheme")
-require("lsp")
 require("plugins")
+require("lsp")
