@@ -4,10 +4,6 @@
 
 My dotfiles for alarcritty, zsh, neovim. Managed by [GNU Stow](https://www.gnu.org/software/stow/).
 
-## Todo
-
-- [ ] Add auto import utility for React - [ts-utils](https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils)
-
 ## Installation
 
 ### Using Git
