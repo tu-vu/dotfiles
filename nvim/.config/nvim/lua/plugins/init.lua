@@ -92,7 +92,7 @@ return require("packer").startup(function(use)
 		config = config("plugins.telescope"),
 	})
 
-	-- Colorschemes
+	-- Themes
 	use_with_config("navarasu/onedark.nvim", "themes.onedark") -- Nice colorscheme written in Lua
 
 	-- Productivity
