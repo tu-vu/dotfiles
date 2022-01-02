@@ -41,7 +41,6 @@ capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 for _, server in ipairs({
 	"tsserver",
 	"null-ls",
-	"eslint",
 	"jsonls",
 	"sumneko_lua",
 }) do
