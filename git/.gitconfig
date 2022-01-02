@@ -18,7 +18,7 @@
     br = branch
     co = checkout
     d = diff
-    undo = checkout --
+    undo = restore .
     unstage = reset HEAD --
     uncommit = reset HEAD~1 --soft
     pod = push origin dev
