@@ -32,6 +32,8 @@ local on_attach = function(client, bufnr)
 	if client.resolved_capabilities.document_formatting then
 		vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
 	end
+
+	require("illuminate").on_attach(client)
 end
 
 -- Add additional capabilities supported by nvim-cmp
