@@ -1,5 +1,4 @@
 local fn = vim.fn
-
 -- Automatically install packer on any machine you clone configuration to
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -93,7 +92,9 @@ return require("packer").startup(function(use)
 	})
 
 	-- Themes
-	use_with_config("navarasu/onedark.nvim", "themes.onedark") -- Nice colorscheme written in Lua
+	use_with_config("folke/tokyonight.nvim", "themes.tokyonight")
+	use_with_config("nvim-lualine/lualine.nvim", "plugins.lualine") -- Neovim statusline
+	-- use_with_config("navarasu/onedark.nvim", "themes.onedark")
 
 	-- Productivity
 	use_with_config("windwp/nvim-autopairs", "plugins.autopairs") -- Autocomplete pairs, integerates with both cmp and treesitter
