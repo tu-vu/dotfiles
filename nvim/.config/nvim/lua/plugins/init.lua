@@ -101,12 +101,6 @@ return require("packer").startup(function(use)
 	use_with_config("windwp/nvim-autopairs", "plugins.autopairs") -- Autocomplete pairs, integerates with both cmp and treesitter
 	use({ "windwp/nvim-ts-autotag" }) -- Autocomplete tags
 	use("tpope/vim-surround") -- Tags editing
-	use({
-		"folke/trouble.nvim", -- Pretty list of diagnostic, references, etc.
-		config = function()
-			require("trouble").setup()
-		end,
-	})
 
 	-- Misc
 	use("nvim-lua/plenary.nvim") -- Useful Lua functions used by lots of plugins
