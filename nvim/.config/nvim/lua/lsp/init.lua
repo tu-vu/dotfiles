@@ -2,10 +2,9 @@ local u = require("utils")
 
 local on_attach = function(client, bufnr)
 	-- commands
-	u.lua_command("LspFormatting", "vim.lsp.buf.formatting()")
-	u.lua_command("LspHover", "vim.lsp.buf.hover()")
 	u.lua_command("LspRename", "vim.lsp.buf.rename()")
 	u.lua_command("LspTypeDef", "vim.lsp.buf.type_definition()")
+	u.lua_command("LspHover", "vim.lsp.buf.hover()")
 	u.lua_command("LspDiagPrev", "vim.diagnostic.goto_prev()")
 	u.lua_command("LspDiagNext", "vim.diagnostic.goto_next()")
 	u.lua_command("LspDiagLine", "vim.diagnostic.open_float()")
