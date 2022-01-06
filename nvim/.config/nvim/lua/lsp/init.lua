@@ -1,5 +1,9 @@
 local u = require("utils")
 
+local border_opts = { border = "single", focusable = false, scope = "line" }
+
+vim.diagnostic.config({ virtual_text = false, float = border_opts })
+
 local on_attach = function(client, bufnr)
 	-- commands
 	u.lua_command("LspRename", "vim.lsp.buf.rename()")
