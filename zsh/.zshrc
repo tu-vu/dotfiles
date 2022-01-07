@@ -82,3 +82,6 @@ alias ll='ls -la'
 alias la='ls -a'
 alias lt='ls --tree'
 alias luamake=$HOME/lua-language-server/3rd/luamake/luamake
+
+# Disable error message for globbing
+setopt +o nomatch
