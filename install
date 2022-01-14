@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 export DOTFILES=$HOME/dotfiles
-export STOW_FOLDERS="nvim,zsh,powerlevel10k,git"
+export STOW_FOLDERS="nvim,zsh,powerlevel10k,git,alacritty"
 
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
