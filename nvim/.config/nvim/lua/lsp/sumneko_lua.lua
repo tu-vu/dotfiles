@@ -6,7 +6,7 @@ end
 HOME = vim.fn.expand("$HOME")
 
 local sumneko_root_path = HOME .. "/tools/lua-language-server"
-local sumneko_binary = HOME .. "/tools/lua-language-server/bin/Linux/lua-language-server"
+local sumneko_binary = HOME .. "/tools/lua-language-server/bin/macOS/lua-language-server"
 
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
