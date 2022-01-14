@@ -28,10 +28,13 @@ Then install Lua: `make install`.
 ### Cargo - Rust package manager
 
 ```
-`curl https://sh.rustup.rs -sSf | sh`
-cargo install lsd --boost ls command
-cargo install stylua --Lua code formatter
+curl https://sh.rustup.rs -sSf | sh
+cargo install lsd
+cargo install stylua
 ```
+
+### Font
+Install Fira Nerd Font at https://www.nerdfonts.com/font-downloads
 
 ### Neovim plugins
 
