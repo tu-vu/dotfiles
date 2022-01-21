@@ -50,6 +50,7 @@ capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 for _, server in ipairs({
 	"tsserver",
 	"null-ls",
+	"python-ls",
 	"sumneko_lua",
 }) do
 	require("lsp." .. server).setup(on_attach, capabilities)
