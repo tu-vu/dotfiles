@@ -69,7 +69,11 @@ plugins=(
     git 
     zsh-autosuggestions
     zsh-syntax-highlighting
+    tmux
 )
+
+# Open tmux on startup, requires tmux plugin
+ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
