@@ -2,7 +2,7 @@
 
 # dotfiles
 
-My dotfiles for alarcritty, zsh, neovim. Managed by [GNU Stow](https://www.gnu.org/software/stow/).
+My dotfiles for alarcritty, tmux, neovim. Managed by [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## Installation
 
@@ -34,6 +34,7 @@ cargo install stylua
 ```
 
 ### Font
+
 Install Fira Nerd Font at https://www.nerdfonts.com/font-downloads
 
 ### Neovim plugins
