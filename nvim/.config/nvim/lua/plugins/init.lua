@@ -38,7 +38,6 @@ return require("packer").startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- Formatters and linters
 	use("jose-elias-alvarez/nvim-lsp-ts-utils") -- Useful utilities for TypeScript
 	use_with_config("RRethy/vim-illuminate", "plugins.illuminate") -- Highlights and allows moving between variable references
-	use("b0o/schemastore.nvim") -- Simple access to schemastore
 
 	-- Treesitter
 	use({
