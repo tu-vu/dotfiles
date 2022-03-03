@@ -4,7 +4,7 @@
 	username = tuvu
 [core]
     editor = nvim
-	autocrlf = true
+	autocrlf = input
 [color]
     status = auto
     diff = auto
