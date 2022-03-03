@@ -4,6 +4,7 @@
 	username = tuvu
 [core]
     editor = nvim
+	autocrlf = true
 [color]
     status = auto
     diff = auto
@@ -34,3 +35,5 @@
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true
