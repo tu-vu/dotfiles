@@ -1,0 +1,69 @@
+" Map leader key to space
+let mapleader="\<SPACE>"
+
+set scrolloff=5
+set relativenumber
+set number
+set smartcase
+set incsearch
+set nohlsearch
+
+" Disable annoying beep sound
+set noerrorbells
+set vb t_vb=
+
+" IdeaVim-specific features
+set surround
+set ideajoin
+set nerdtree
+
+" Enable system clipboard from IdeaVim and vice versa
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+" Shortcuts for opening/reloading .ideavimrc
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+" Quick window navigation
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+map <C-H> <C-W>h
+
+" Splitting Windows
+nmap <Leader>v :vsplit<CR>
+nmap <Leader>h :split<CR>
+
+" Greatest remap ever: Paste without losing the original buffer
+vnoremap <Leader>p "_dP
+
+" Hide open panels
+nmap <Leader>w :action HideAllWindows<CR>
+
+" Open Terminal
+nmap <Leader>t :action ActivateTerminalToolWindow<CR>
+
+" Open Files Explorer
+nmap <Leader>fs :NERDTreeToggle<CR>
+
+" Open recent project dialog box
+nmap <Leader><Leader>m :action ManageRecentProjects<CR>
+
+"nmap <Leader>fs :action FileStructurePopup<CR>
+"nmap <Leader>fb :action RecentFiles<CR>
+nmap <Leader>ff :action GotoFile<CR>
+nmap <Leader>fg :action SearchEverywhere<CR>
+
+" Running and Debugging
+map <leader>r <Action>(ContextRun)
+map <leader>d <Action>(ContextDebug)
+map \b <Action>(ToggleLineBreakpoint)
+
+" Source code navigation
+nmap gi: action GoToImplementation<CR>
+nmap gt :action GotoTest<CR>
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
