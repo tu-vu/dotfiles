@@ -1,3 +1,4 @@
+"source ~/.vimrc
 " Map leader key to space
 let mapleader="\<SPACE>"
 
@@ -7,6 +8,7 @@ set number
 set smartcase
 set incsearch
 set nohlsearch
+set NERDTree
 
 " Disable annoying beep sound
 set noerrorbells
@@ -15,7 +17,6 @@ set vb t_vb=
 " IdeaVim-specific features
 set surround
 set ideajoin
-set nerdtree
 
 " Enable system clipboard from IdeaVim and vice versa
 set clipboard+=unnamed
@@ -48,7 +49,7 @@ nmap <Leader>t :action ActivateTerminalToolWindow<CR>
 nmap <Leader><Leader>m :action ManageRecentProjects<CR>
 
 " Open Files Explorer
-nmap <Leader>fs :NERDTree<CR>
+nmap <Leader>fs :NERDTreeFind<CR>
 nmap <Leader>fb :action RecentFiles<CR>
 nmap <Leader>ff :action GotoFile<CR>
 nmap <Leader>fg :action SearchEverywhere<CR>
@@ -59,9 +60,11 @@ map <leader>d <Action>(ContextDebug)
 map \b <Action>(ToggleLineBreakpoint)
 
 " Source code navigation
-nmap gi: action GoToImplementation<CR>
+nmap gD :action GotoImplementation<CR>
 nmap gt :action GotoTest<CR>
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
+nnoremap gc :action VcsShowNextChangeMarker<CR>
+nnoremap gC :action VcsShowPrevChangeMarker<CR>
 nnoremap [[ :action MethodUp<CR>
 nnoremap ]] :action MethodDown<CR>
