@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790f0435-2d3b-40a6-beee-79186555e8f0" name="Changes" comment="" />
+    <list default="true" id="790f0435-2d3b-40a6-beee-79186555e8f0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ideavim/.ideavimrc" beforeDir="false" afterPath="$PROJECT_DIR$/ideavim/.ideavimrc" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,6 +78,7 @@
       <workItem from="1695614436513" duration="6000" />
       <workItem from="1695614456113" duration="383000" />
       <workItem from="1695657086109" duration="30000" />
+      <workItem from="1695657402103" duration="115000" />
     </task>
     <servers />
   </component>

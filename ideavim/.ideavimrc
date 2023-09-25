@@ -44,9 +44,11 @@ nmap <Leader>w :action HideAllWindows<CR>
 
 " Open Terminal
 nmap <Leader>t :action ActivateTerminalToolWindow<CR>
+nmap <Leader>R :action ActivateRunToolWindow<CR>
 
-" Open recent project dialog box
+" Projects management
 nmap <Leader><Leader>m :action ManageRecentProjects<CR>
+nmap <Leader>q: :action CloseProject<CR>
 
 " Open Files Explorer
 nmap <Leader>fs :NERDTreeFind<CR>
