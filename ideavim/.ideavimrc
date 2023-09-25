@@ -48,7 +48,7 @@ nmap <Leader>R :action ActivateRunToolWindow<CR>
 
 " Projects management
 nmap <Leader><Leader>m :action ManageRecentProjects<CR>
-nmap <Leader>q: :action CloseProject<CR>
+nmap <Leader><Leader>q: :action CloseProject<CR>
 
 " Open Files Explorer
 nmap <Leader>fs :NERDTreeFind<CR>
